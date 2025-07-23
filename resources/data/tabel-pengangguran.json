@@ -1,0 +1,10 @@
+{
+    "judul": "Tingkat Pengangguran Terbuka 2024",
+    "kolom": ["Kabupaten/Kota", "Jumlah Pengangguran", "TPT (%)"],
+    "data": [
+        ["Bandar Lampung", 12000, 5.6],
+        ["Metro", 4000, 5.2],
+        ["Lampung Selatan", 7500, 6.1],
+        ["Pringsewu", 5200, 4.9]
+    ]
+}

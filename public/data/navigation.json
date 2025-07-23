@@ -1,0 +1,317 @@
+[
+    {
+        "title": "PENDAHULUAN",
+        "children": [
+            {
+                "title": "Kata Pengantar",
+                "file": "pendahuluan/kata-pengantar.json"
+            },
+            { "title": "Visi Dan Misi", "file": "pendahuluan/visi-misi.json" },
+            {
+                "title": "Tujuan Dan Sasaran",
+                "file": "pendahuluan/tujuan-sasaran.json"
+            },
+            {
+                "title": "Kebijakan Dan Strategi",
+                "file": "pendahuluan/kebijakan-strategi.json"
+            },
+            {
+                "title": "IKU Dinas Tenaga Kerja\nProvinsi Lampung Tahun 2019–2024",
+                "file": "pendahuluan/iku.json"
+            },
+            {
+                "title": "Realisasi Capaian IKU Dinas Tenaga Kerja\nProvinsi Lampung Tahun 2022-2024",
+                "file": "pendahuluan/realisasi-iku.json"
+            },
+            {
+                "title": "Dasar, Konsep, Dan Definisi",
+                "file": "pendahuluan/dasar-konsep-definisi.json"
+            },
+            {
+                "title": "Program Dinas Tenaga Kerja Provinsi Lampung",
+                "file": "pendahuluan/program-disnaker.json"
+            }
+        ]
+    },
+    {
+        "title": "DATA PEGAWAI DINAS",
+        "items": [
+            {
+                "title": "Data PNS",
+                "children": [
+                    {
+                        "title": "Berdasarkan Jabatan",
+                        "file": "data_pegawai_dinas/berdasarkan-jabatan.json"
+                    },
+                    {
+                        "title": "Berdasarkan Pangkat/Golongan",
+                        "file": "data_pegawai_dinas/berdasarkan-pangkat-golongan.json"
+                    },
+                    {
+                        "title": "Berdasarkan Agama",
+                        "file": "data_pegawai_dinas/berdasarkan-agama.json"
+                    },
+                    {
+                        "title": "Berdasarkan Pendidikan",
+                        "file": "data_pegawai_dinas/berdasarkan-pendidikan.json"
+                    },
+                    {
+                        "title": "Berdasarkan Jenis Kelamin",
+                        "file": "data_pegawai_dinas/berdasarkan-jeniskelamin.json"
+                    },
+                    {
+                        "title": "Jumlah PTHL",
+                        "file": "data_pegawai_dinas/jumlah-pthl.json"
+                    }
+                ]
+            },
+            {
+                "title": "Data Pegawai Fungsional",
+                "file": "data_pegawai_dinas/data-pegawai-fungsional.json"
+            },
+            {
+                "title": "Data Instruktur Berdasarkan Kejuruan",
+                "file": "data_pegawai_dinas/data-instruktur-berdasarkan-kejuruan.json"
+            }
+        ]
+    },
+    {
+        "title": "KONDISI KETENAGAKERJAAN",
+        "items": [
+            {
+                "title": "Penduduk Usia Kerja",
+                "children": [
+                    {
+                        "title": "Menurut Kabupaten/Kota",
+                        "file": "kondisi_ketenagakerjaan/menurut-kabupaten-kota.json"
+                    },
+                    {
+                        "title": "Menurut Kelompok Umur",
+                        "file": "kondisi_ketenagakerjaan/menurut-kelompok-umur.json"
+                    },
+                    {
+                        "title": "Menurut Tingkat Pendidikan",
+                        "file": "kondisi_ketenagakerjaan/menurut-tingkat-pendidikan.json"
+                    }
+                ]
+            },
+            {
+                "title": "Angkatan Kerja",
+                "children": [
+                    {
+                        "title": "Menurut Kabupaten/Kota",
+                        "file": "kondisi_ketenagakerjaan/AK-menurut-kabupaten-kota.json"
+                    },
+                    {
+                        "title": "Menurut Kelompok Umur",
+                        "file": "kondisi_ketenagakerjaan/AK-menurut-kelompok-umur.json"
+                    },
+                    {
+                        "title": "Menurut Tingkat Pendidikan",
+                        "file": "kondisi_ketenagakerjaan/AK-menurut-tingkat-pendidikan.json"
+                    }
+                ]
+            },
+            {
+                "title": "Tingkat Partisipasi Angkatan Kerja",
+                "children": [
+                    {
+                        "title": "Menurut Umur",
+                        "file": "kondisi_ketenagakerjaan/TP-menurut-kelompok-umur.json"
+                    },
+                    {
+                        "title": "Menurut Pendidikan",
+                        "file": "kondisi_ketenagakerjaan/TP-menurut-tingkat-pendidikan.json"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "PENDUDUK BEKERJA",
+        "items": [
+            {
+                "title": "Menurut Kabupaten/Kota",
+                "file": "penduduk_bekerja/menurut-kabupaten-kota.json"
+            },
+            {
+                "title": "Menurut Umur",
+                "file": "penduduk_bekerja/menurut-umur.json"
+            },
+            {
+                "title": "Menurut Tingkat Pendidikan",
+                "file": "penduduk_bekerja/menurut-tingkat-pendidikan.json"
+            },
+            {
+                "title": "Menurut Jenis Pekerjaan",
+                "file": "penduduk_bekerja/menurut-jenis-pekerjaan.json"
+            },
+            {
+                "title": "Menurut Status Pekerjaan",
+                "file": "penduduk_bekerja/menurut-status-pekerjaan.json"
+            },
+            {
+                "title": "Menurut Sektor Lapangan Usaha",
+                "file": "penduduk_bekerja/menurut-sektor-lapangan-usaha.json"
+            }
+        ]
+    },
+    {
+        "title": "PENGANGGURAN",
+        "items": [
+            {
+                "title": "Tingkat Pengangguran Terbuka (TPT)",
+                "children": [
+                    {
+                        "title": "Menurut Kabupaten/Kota",
+                        "file": "pengangguran/TPT-menurut-kabupaten-kota.json"
+                    },
+                    {
+                        "title": "Menurut Pendidikan",
+                        "file": "pengangguran/TPT-menurut-pendidikan.json"
+                    }
+                ]
+            },
+            {
+                "title": "Jumlah Pengangguran Terbuka",
+                "children": [
+                    {
+                        "title": "Menurut Kabupaten/Kota",
+                        "file": "pengangguran/JPT-menurut-kabupaten-kota.json"
+                    },
+                    {
+                        "title": "Menurut Pendidikan",
+                        "file": "pengangguran/JPT-menurut-pendidikan.json"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "PELATIHAN DAN PEMAGANGAN",
+        "items": [
+            {
+                "title": "Lulusan Pelatihan (BLK dan lainnya)",
+                "file": "pelatihan_dan_pemagangan/lulusan-pelatihan.json"
+            },
+            {
+                "title": "Jumlah Lembaga Pelatihan Kerja Pemerintah dan Swasta",
+                "file": "pelatihan_dan_pemagangan/jumlah-pelatihan-kerja-pemerintah-swasta.json"
+            },
+            {
+                "title": "Peserta Pemagangan Tahun 2022",
+                "file": "pelatihan_dan_pemagangan/peserta-pemagangan-2022.json"
+            },
+            {
+                "title": "Peserta Pemagangan Tahun 2023",
+                "file": "pelatihan_dan_pemagangan/peserta-pemagangan-2023.json"
+            },
+            {
+                "title": "Peserta Pemagangan Tahun 2024",
+                "file": "pelatihan_dan_pemagangan/peserta-pemagangan-2024.json"
+            }
+        ]
+    },
+    {
+        "title": "PENEMPATAN & PENCARIAN KERJA",
+        "items": [
+            {
+                "title": "Pencari Kerja, Lowongan, Penempatan",
+                "file": "penempatan_dan_pencarian_kerja/pencari-kerja-lowongan-penempatan.json"
+            },
+            {
+                "title": "Penempatan PMI per Kabupaten/Kota & Jenis Kelamin",
+                "file": "penempatan_dan_pencarian_kerja/penempatan-pmi-kabupaten-kota-jenis-kelamin.json"
+            },
+            {
+                "title": "Penempatan PMI per Negara Tujuan",
+                "file": "penempatan_dan_pencarian_kerja/penempatan-pmi-negara-tujuan.json"
+            },
+            {
+                "title": "Penempatan Tenaga Kerja Akad",
+                "file": "penempatan_dan_pencarian_kerja/penempatan-tenaga-kerja-akad.json"
+            }
+        ]
+    },
+    {
+        "title": "TENAGA KERJA ASING (TKA)",
+        "items": [
+            {
+                "title": "TKA Tahun 2022",
+                "file": "tenaga_kerja_asing/TKA-tahun-2022.json"
+            },
+            {
+                "title": "TKA Tahun 2023",
+                "file": "tenaga_kerja_asing/TKA-tahun-2023.json"
+            },
+            {
+                "title": "TKA Tahun 2024",
+                "file": "tenaga_kerja_asing/TKA-tahun-2024.json"
+            }
+        ]
+    },
+    {
+        "title": "DATA PERUSAHAAN",
+        "items": [
+            {
+                "title": "Perusahaan Menurut Sensus Ekonomi",
+                "file": "data_perusahaan/perusahaan-menurut-sensus-ekonomi.json"
+            },
+            {
+                "title": "Tenaga Kerja Menurut Sensus Ekonomi",
+                "file": "data_perusahaan/tenaga-kerja-menurut-sensus-ekonomi.json"
+            },
+            {
+                "title": "Program Jaminan Sosial Ketenagakerjaan",
+                "file": "data_perusahaan/program-jaminan-sosial-ketenagakerjaan.json"
+            },
+            {
+                "title": "Tenaga Kerja Disabilitas",
+                "file": "data_perusahaan/tenaga-kerja-disabilitas.json"
+            }
+        ]
+    },
+    {
+        "title": "NORMA DAN REGULASI KERJA",
+        "items": [
+            {
+                "title": "Norma K3 dan Norma Kerja",
+                "file": "norma_dan_regulasi_kerja/norma-k3-dan-norma-kerja.json"
+            },
+            {
+                "title": "Perusahaan dengan PP/PKB",
+                "file": "norma_dan_regulasi_kerja/perusahaan-dgn-pp-pkb.json"
+            }
+        ]
+    },
+    {
+        "title": "HUBUNGAN INDUSTRIAL & UMP",
+        "items": [
+            {
+                "title": "Jumlah Kasus dan UMP/UMK",
+                "file": "hubungan_industrial_ump/jumlah-kasus-ump-umk.json"
+            },
+            {
+                "title": "Jumlah Perselisihan Hubungan Industrial",
+                "file": "hubungan_industrial_ump/jumlah-perselisihan-hubungan-industrial.json"
+            },
+            {
+                "title": "Perkembangan UMP",
+                "file": "hubungan_industrial_ump/perkembangan-ump.json"
+            }
+        ]
+    },
+    {
+        "title": "PENUTUP",
+        "items": [
+            {
+                "title": "Istilah Bidang Ketenagakerjaan",
+                "file": "penutup/istilah-bidang-ketenagakerjaan.json"
+            },
+            {
+                "title": "Daftar Alamat Dinas Naker se-Lampung",
+                "file": "penutup/daftar-alamat-dinas-naker.json"
+            }
+        ]
+    }
+]
