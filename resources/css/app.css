@@ -1,7 +1,15 @@
+/* Import font 'Inter' dari Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Terapkan font ke seluruh aplikasi */
+body {
+    font-family: "Inter", sans-serif;
+}
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';

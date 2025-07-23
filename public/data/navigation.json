@@ -164,11 +164,11 @@
                 "children": [
                     {
                         "title": "Menurut Kabupaten/Kota",
-                        "file": "pengangguran/tpt-menurut-kabupaten-kota.json"
+                        "file": "pengangguran/TPT-menurut-kabupaten-kota.json"
                     },
                     {
                         "title": "Menurut Pendidikan",
-                        "file": "pengangguran/tpt-menurut-pendidikan.json"
+                        "file": "pengangguran/TPT-menurut-pendidikan.json"
                     }
                 ]
             },
