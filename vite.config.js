@@ -12,4 +12,7 @@ export default defineConfig({
         react(),
         tailwindcss(),
     ],
+    build: {
+        outDir: "dist", // pastikan ini ada dan bernama 'dist'
+    },
 });

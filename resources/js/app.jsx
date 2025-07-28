@@ -9,11 +9,9 @@ function App() {
     const [showSidebar, setShowSidebar] = useState(false);
 
     return (
-        // Latar belakang diubah menjadi abu-abu sangat terang
         <div className="p-4 bg-slate-50 min-h-screen">
             <button
                 onClick={() => setShowSidebar(!showSidebar)}
-                // Warna tombol diubah agar sesuai palet baru
                 className="md:hidden mb-4 p-2 bg-teal-600 hover:bg-teal-700 text-white rounded"
             >
                 ☰ Menu

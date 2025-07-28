@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 // Impor ikon
 import {
     FaQuoteLeft,
@@ -2790,6 +2792,7 @@ function Tka2024Page(props) {
     );
 }
 
+// --- KOMPONEN BARU UNTUK DATA PERUSAHAAN ---
 function PerusahaanSensusPage({ dataFromHtml, selectedItem }) {
     const chartData = {
         labels: [
@@ -3609,6 +3612,8 @@ function DefaultContentView({ data, selectedItem }) {
 export default function Content({ selectedItem }) {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [exporting, setExporting] = useState(false);
+    const contentToPrintRef = useRef(null);
 
     useEffect(() => {
         if (!selectedItem || !selectedItem.file) {
@@ -3627,10 +3632,99 @@ export default function Content({ selectedItem }) {
             .finally(() => setLoading(false));
     }, [selectedItem]);
 
+    const handleExportPdf = async () => {
+        if (!contentToPrintRef.current || !selectedItem) {
+            console.error("Content element not found or no item selected.");
+            return;
+        }
+
+        setExporting(true);
+
+        const elementToCapture = contentToPrintRef.current;
+        const pdfFileName = `${selectedItem.title
+            .replace(/[\s/]/g, "_")
+            .toLowerCase()}.pdf`;
+
+        ChartJS.defaults.animation = false;
+
+        await new Promise((resolve) => setTimeout(resolve, 500));
+
+        html2canvas(elementToCapture, {
+            scale: 2,
+            useCORS: true,
+            logging: true,
+            backgroundColor: "#ffffff",
+        })
+            .then((canvas) => {
+                try {
+                    // Konversi canvas menjadi data URL gambar format PNG
+                    const imgData = canvas.toDataURL("image/png");
+
+                    // Inisialisasi jsPDF, format A4, orientasi potrait, satuan milimeter
+                    const pdf = new jsPDF({
+                        orientation: "portrait",
+                        unit: "mm",
+                        format: "a4",
+                    });
+
+                    // Kalkulasi dimensi gambar agar pas di halaman PDF dengan margin
+                    const pageHeight = pdf.internal.pageSize.getHeight();
+                    const pageWidth = pdf.internal.pageSize.getWidth();
+                    const margin = 10; // Margin 10mm atas-bawah dan kiri-kanan
+
+                    const imgWidth = pageWidth - margin * 2;
+                    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+                    let heightLeft = imgHeight;
+                    let position = margin; // Posisi awal gambar dengan margin atas
+
+                    // Tambahkan gambar ke halaman pertama
+                    pdf.addImage(
+                        imgData,
+                        "PNG",
+                        margin,
+                        position,
+                        imgWidth,
+                        imgHeight
+                    );
+                    heightLeft -= pageHeight - margin * 2;
+
+                    // Logika untuk membuat halaman baru jika konten lebih panjang dari satu halaman
+                    while (heightLeft > 0) {
+                        pdf.addPage(); // Tambah halaman baru
+                        position = -heightLeft + margin; // Hitung posisi 'y' baru untuk sisa gambar
+                        // Tambahkan gambar yang sama, tapi dengan posisi 'y' yang digeser ke atas
+                        pdf.addImage(
+                            imgData,
+                            "PNG",
+                            margin,
+                            position,
+                            imgWidth,
+                            imgHeight
+                        );
+                        heightLeft -= pageHeight - margin * 2;
+                    }
+
+                    // Simpan file PDF
+                    pdf.save(pdfFileName);
+                } catch (error) {
+                    console.error("Terjadi kesalahan saat membuat PDF:", error);
+                } finally {
+                    ChartJS.defaults.animation = true;
+                    setExporting(false); // Sembunyikan status loading
+                }
+            })
+            .catch((err) => {
+                console.error("Gagal saat menggunakan html2canvas:", err);
+                ChartJS.defaults.animation = true;
+                setExporting(false); // Sembunyikan status loading jika gagal
+            });
+    };
+
     const renderContent = () => {
         if (!selectedItem) {
             return (
-                <div className="text-center">
+                <div className="text-center p-8">
                     <p className="text-slate-600">
                         Selamat Datang! Silakan pilih item dari menu di samping
                         untuk melihat data.
@@ -4008,15 +4102,11 @@ export default function Content({ selectedItem }) {
 
     return (
         <div className="p-6 rounded-lg shadow-md bg-white">
-            {loading ? (
-                <div className="flex flex-col items-center">
-                    <div className="w-8 h-8 border-4 border-teal-400 border-t-transparent rounded-full animate-spin mb-2"></div>
-                    <p className="text-sm text-slate-500">Memuat data...</p>
-                </div>
-            ) : (
-                <>
+            {/* Header dengan Judul dan Tombol Ekspor */}
+            <div className="flex justify-between items-start mb-4">
+                <div>
                     {selectedItem && (
-                        <div className="mb-6 pb-4 border-b border-slate-200">
+                        <>
                             <h2 className="text-2xl font-bold whitespace-pre-line text-slate-800">
                                 {data?.judul || selectedItem.title}
                             </h2>
@@ -4025,11 +4115,61 @@ export default function Content({ selectedItem }) {
                                     {selectedItem.parentTitle}
                                 </p>
                             )}
-                        </div>
+                        </>
                     )}
-                    {renderContent()}
-                </>
-            )}
+                </div>
+                {selectedItem && (
+                    <button
+                        onClick={handleExportPdf}
+                        disabled={exporting || loading}
+                        className="bg-teal-600 text-white font-bold py-2 px-4 rounded hover:bg-teal-700 disabled:bg-slate-400 flex items-center transition-colors duration-200"
+                    >
+                        {exporting ? (
+                            <>
+                                <svg
+                                    className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <circle
+                                        className="opacity-25"
+                                        cx="12"
+                                        cy="12"
+                                        r="10"
+                                        stroke="currentColor"
+                                        strokeWidth="4"
+                                    ></circle>
+                                    <path
+                                        className="opacity-75"
+                                        fill="currentColor"
+                                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                                    ></path>
+                                </svg>
+                                Mengekspor...
+                            </>
+                        ) : (
+                            "Ekspor ke PDF"
+                        )}
+                    </button>
+                )}
+            </div>
+
+            {/* Kontainer untuk Konten yang Akan Diekspor */}
+            <div
+                ref={contentToPrintRef}
+                id="konten-pdf"
+                className="border-t border-slate-200 pt-6"
+            >
+                {loading ? (
+                    <div className="flex flex-col items-center justify-center py-10">
+                        <div className="w-8 h-8 border-4 border-teal-400 border-t-transparent rounded-full animate-spin mb-2"></div>
+                        <p className="text-sm text-slate-500">Memuat data...</p>
+                    </div>
+                ) : (
+                    renderContent()
+                )}
+            </div>
         </div>
     );
 }
